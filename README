@@ -1,0 +1,64 @@
+Drug response prediction
+
+R package use for predicting drug response of patients
+
+
+Predicting drug response of patients
+
+This function predicts drug response by using svm based recursive feature elimination.
+
+
+Requirement
+
+library affy
+
+
+Install instruction
+
+R install affy package
+source("http://bioconductor.org/biocLite.R")
+biocLite("affy")
+
+R install KEADrugResponse package
+Download zip file from build folder and use install.package function in R to install
+R CMD INSTALL --merge-multiarch KEADrugResponse_*.tar.gz
+Unzip file
+
+Usage
+
+library(KEADrugResponse); library(affy);
+DrugResponse.predict(input file, inputfile_formate, sample_name, path_to_model_files’../data')
+
+Arguments
+
+patient_inputfile		gene expression data for patient.
+
+inputfile_formate     		input file formate, can be cel (cel file) or exp (gene expression file)
+
+patient_name     		patient name
+
+path.to.model     		where the model stored, default to 'KEA_DrugResponse/data'. 
+ 
+return a matrix of positive or negative score for each drug
+
+output pdf files of prediction score for each patient
+
+
+Example
+
+input cel file
+DrugResponse.predict(patient_inputfile,'cel',patient name,'KEA_DrugResponse/data')
+
+
+Pipeline
+
+we provide a bash script to run test for cancer samples in pipeline folder.
+Each pipeline test uses the model file in KEA_DrugResponse/data (default $DATAPATH) folder. Change the $DATAPATH variable in pipeline script for different work path
+
+# cd pipeline
+
+run test for GSE sets
+# ./DrugResponse_sample_test_GSE.sh GSE30161
+
+run test for GSM samples
+# ./DrugResponse_sample_test_GSM.sh GSM516801

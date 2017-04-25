@@ -1,0 +1,10 @@
+Package: KEADrugResponse
+Type: Package
+Title: Drug Response
+Version: 0.1.2
+Date: 2017-04-25
+Author: Cai Huang
+Maintainer: Cai Huang <chuang95@gatech.edu>
+Description: R package use for predicting drug response of patients
+License: *
+RoxygenNote: 6.0.1

@@ -1,0 +1,143 @@
+sweave
+Sweave
+install.Packages("roxygen2 ")
+install.packages("roxygen2 ")
+install.packages("roxygen2")
+length((0:4))
+q()
+source("http://bioconductor.org/biocLite.R")#
+biocLite("IRanges")#
+#install devtools if you don't have it already#
+install.packages("devtools")#
+library(devtools)#
+install_github("genome/bmm")#
+install_github("genome/sciClone")
+install.packages("devtools")
+?BiocUpgrade for help
+?BiocUpgrade
+source("http://bioconductor.org/biocLite.R")
+biocLite("IRanges")
+library(devtools)
+install_github("genome/bmm")
+install_github("genome/sciClone")
+library(rgl)
+install_github("genome/sciClone")
+library(sciclone)
+library(sciClone)
+require(stats) # for rnorm#
+plot(1:4, rnorm(4), axes = FALSE)#
+axis(1, 1:4, LETTERS[1:4])
+a=c(1,2,3,4)
+as.numeric(a)
+twogrp<-c(rnorm(5)+4,rnorm(5)+20,rnorm(5)+5,rnorm(5)+22)#
+ gpcol<-c(2,2,2,2,2,3,3,3,3,3,4,4,4,4,4,5,5,5,5,5)#
+ gap.plot(twogrp,gap=c(8,16),xlab="Index",ylab="Group values",#
+  main="Gap on Y axis",col=gpcol)#
+ gap.plot(twogrp,rnorm(20),gap=c(8,16),gap.axis="x",xlab="X values",#
+  xtics=c(4,7,17,20),ylab="Y values",main="Gap on X axis with added lines")
+library(plotrix)
+twogrp<-c(rnorm(5)+4,rnorm(5)+20,rnorm(5)+5,rnorm(5)+22)#
+ gpcol<-c(2,2,2,2,2,3,3,3,3,3,4,4,4,4,4,5,5,5,5,5)#
+ gap.plot(twogrp,gap=c(8,16),xlab="Index",ylab="Group values",#
+  main="Gap on Y axis",col=gpcol)#
+ gap.plot(twogrp,rnorm(20),gap=c(8,16),gap.axis="x",xlab="X values",#
+  xtics=c(4,7,17,20),ylab="Y values",main="Gap on X axis with added lines")
+gap.plot(c(seq(3.5,7.5,by=0.5),seq(16.5,22.5,by=0.5)),#
+  rnorm(22),gap=c(8,16),gap.axis="x",type="l",add=TRUE,col=2,)
+gap.plot(twogrp,gap=c(8,16,25,35),#
+ xlab="X values",ylab="Y values",xlim=c(1,30),ylim=c(0,43),#
+ main="Test two gap plot with the lot",xtics=seq(0,30,by=5),#
+ ytics=c(4,6,18,20,22,38,40,42),#
+ lty=c(rep(1,10),rep(2,10)),#
+ pch=c(rep(2,10),rep(3,10)),#
+ col=c(rep(2,10),rep(3,10)),#
+ type="b")#
+ gap.plot(21:30,rnorm(10)+40,gap=c(8,16,25,35),add=TRUE,#
+  lty=rep(3,10),col=rep(4,10),type="l")
+library(affy)
+rm(list = setdiff(ls(), lsf.str()))#
+source('DrugResponse_v0.11.R')#
+library(affy)#
+DrugResponse.predict('../cel/1/','cel','545R_r30_v0.11','../data_ov_br')#
+DrugResponse.predict('../cel/2/','cel','992om_r30_v0.11','../data_ov_br')#
+DrugResponse.predict('../cel/6/','cel','1145_r30_v0.11','../data_ov_br')#
+DrugResponse.predict('../cel/5/','cel','272_r30_v0.11','../data_ov_br')#
+DrugResponse.predict('../cel/4/','cel','286_r30_v0.11','../data_ov_br')#
+DrugResponse.predict('../cel/8/','cel','588_r30_v0.11','../data_ov_br')#
+DrugResponse.predict('../cel/16/','cel','183_r30_v0.11','../data_ov_br')#
+DrugResponse.predict('../cel/15/','cel','413_r30_v0.11','../data_ov_br')#
+DrugResponse.predict('../cel/13/','cel','336_r30_v0.11','../data_ov_br')#
+DrugResponse.predict('../cel/12/','cel','317_r30_v0.11','../data_ov_br')#
+DrugResponse.predict('../cel/14/','cel','537_r30_v0.11','../data_ov_br')#
+DrugResponse.predict('../cel/11/','cel','229_r30_v0.11','../data_ov_br')#
+DrugResponse.predict('../cel/10/','cel','369_r30_v0.11','../data_ov_br')#
+DrugResponse.predict('../cel/7/','cel','528_r30_v0.11','../data_ov_br')#
+DrugResponse.predict('../cel/9/','cel','542_r30_v0.11','../data_ov_br')#
+DrugResponse.predict('../cel/17/','cel','242_r30_v0.11','../data_ov_br')#
+DrugResponse.predict('../cel/3/','cel','489_r30_v0.11','../data_ov_br')
+rm(list = setdiff(ls(), lsf.str()))#
+source('DrugResponse_v0.11.R')#
+library(affy)#
+DrugResponse.predict('../cel/1/','cel','545R_12all_v0.11','../data_12all')#
+DrugResponse.predict('../cel/2/','cel','992om_12all_v0.11','../data_12all')#
+DrugResponse.predict('../cel/6/','cel','1145_12all_v0.11','../data_12all')#
+DrugResponse.predict('../cel/5/','cel','272_12all_v0.11','../data_12all')#
+DrugResponse.predict('../cel/4/','cel','286_12all_v0.11','../data_12all')#
+DrugResponse.predict('../cel/8/','cel','588_12all_v0.11','../data_12all')#
+DrugResponse.predict('../cel/16/','cel','183_12all_v0.11','../data_12all')#
+DrugResponse.predict('../cel/15/','cel','413_12all_v0.11','../data_12all')#
+DrugResponse.predict('../cel/13/','cel','336_12all_v0.11','../data_12all')#
+DrugResponse.predict('../cel/12/','cel','317_12all_v0.11','../data_12all')#
+DrugResponse.predict('../cel/14/','cel','537_12all_v0.11','../data_12all')#
+DrugResponse.predict('../cel/11/','cel','229_12all_v0.11','../data_12all')#
+DrugResponse.predict('../cel/10/','cel','369_12all_v0.11','../data_12all')#
+DrugResponse.predict('../cel/7/','cel','528_12all_v0.11','../data_12all')#
+DrugResponse.predict('../cel/9/','cel','542_12all_v0.11','../data_12all')#
+DrugResponse.predict('../cel/17/','cel','242_12all_v0.11','../data_12all')#
+DrugResponse.predict('../cel/3/','cel','489_12all_v0.11','../data_12all')
+rm(list = setdiff(ls(), lsf.str()))#
+source('DrugResponse_v0.11.R')#
+DrugResponse.predict('../test_data/545R_992om_3ex.tsv','exp',cbind('545R','992om'),'../data_12all')#
+DrugResponse.predict('../test_data/nr_3ex_or.tsv','exp',cbind('1145','272','286'),'../data_12all')#
+DrugResponse.predict('../test_data/new8_3ex_p.tsv','exp',cbind('183','229','242','317','336','369','413','537'),'../data_12all')#
+DrugResponse.predict('../test_data/new4_3ex.tsv','exp',cbind('489','528','542','588'),'../data_12all')
+rm(list = setdiff(ls(), lsf.str()))#
+source('DrugResponse_v0.11.R')#
+library(affy)#
+DrugResponse.predict('../cel/1/','cel','545R_12all_v0.11','../data_12all')#
+DrugResponse.predict('../cel/2/','cel','992om_12all_v0.11','../data_12all')#
+DrugResponse.predict('../cel/6/','cel','1145_12all_v0.11','../data_12all')#
+DrugResponse.predict('../cel/5/','cel','272_12all_v0.11','../data_12all')#
+DrugResponse.predict('../cel/4/','cel','286_12all_v0.11','../data_12all')#
+DrugResponse.predict('../cel/8/','cel','588_12all_v0.11','../data_12all')#
+DrugResponse.predict('../cel/16/','cel','183_12all_v0.11','../data_12all')#
+DrugResponse.predict('../cel/15/','cel','413_12all_v0.11','../data_12all')#
+DrugResponse.predict('../cel/13/','cel','336_12all_v0.11','../data_12all')#
+DrugResponse.predict('../cel/12/','cel','317_12all_v0.11','../data_12all')#
+DrugResponse.predict('../cel/14/','cel','537_12all_v0.11','../data_12all')#
+DrugResponse.predict('../cel/11/','cel','229_12all_v0.11','../data_12all')#
+DrugResponse.predict('../cel/10/','cel','369_12all_v0.11','../data_12all')#
+DrugResponse.predict('../cel/7/','cel','528_12all_v0.11','../data_12all')#
+DrugResponse.predict('../cel/9/','cel','542_12all_v0.11','../data_12all')#
+DrugResponse.predict('../cel/17/','cel','242_12all_v0.11','../data_12all')#
+DrugResponse.predict('../cel/3/','cel','489_12all_v0.11','../data_12all')
+rm(list = setdiff(ls(), lsf.str()))#
+source('DrugResponse_v0.11.R')#
+DrugResponse.predict('../test_data/545R_992om_3ex.tsv','exp',cbind('545R','992om'),'../data_12all')#
+DrugResponse.predict('../test_data/nr_3ex_or.tsv','exp',cbind('1145','272','286'),'../data_12all')#
+DrugResponse.predict('../test_data/new8_3ex_p.tsv','exp',cbind('183','229','242','317','336','369','413','537'),'../data_12all')#
+DrugResponse.predict('../test_data/new4_3ex.tsv','exp',cbind('489','528','542','588'),'../data_12all')
+rm(list = setdiff(ls(), lsf.str()))#
+source('DrugResponse_v0.11.R')#
+DrugResponse.predict('../data_fix/test_data/545R_992om_3ex.tsv','exp',cbind('545R','992om'),'../data_fix')#
+DrugResponse.predict('../data_fix/test_data/nr_3ex_or.tsv','exp',cbind('1145','272','286'),'../data_fix')#
+DrugResponse.predict('../data_fix/test_data/new8_3ex_p.tsv','exp',cbind('183','229','242','317','336','369','413','537'),'../data_fix')#
+DrugResponse.predict('../data_fix/test_data/new4_3ex.tsv','exp',cbind('489','528','542','588'),'../data_fix')
+rm(list = setdiff(ls(), lsf.str()))#
+source('DrugResponse_v0.11.R')#
+DrugResponse.predict('../test_data/545R_992om_3ex.tsv','exp',cbind('545R','992om'),'../data_fix')#
+DrugResponse.predict('../test_data/nr_3ex_or.tsv','exp',cbind('1145','272','286'),'../data_fix')#
+DrugResponse.predict('../test_data/new8_3ex_p.tsv','exp',cbind('183','229','242','317','336','369','413','537'),'../data_fix')#
+DrugResponse.predict('../test_data/new4_3ex.tsv','exp',cbind('489','528','542','588'),'../data_fix')
+source('DrugResponse42.R')
+DrugResponse.predict('../test_data/545R_992om_3ex.tsv','../data_fix/')
