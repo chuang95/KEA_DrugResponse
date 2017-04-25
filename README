@@ -58,7 +58,7 @@ Each pipeline test uses the model file in KEA_DrugResponse/data (default $DATAPA
 # cd pipeline
 
 run test for GSE sets
-# ./DrugResponse_sample_test_GSE.sh GSE30161
+# ./DrugResponse_sample_test_GSE.sh GSE38069
 
 run test for GSM samples
 # ./DrugResponse_sample_test_GSM.sh GSM516801
