@@ -11,7 +11,7 @@ NULL
 #########################################
 #' predicting drug response of patients
 #'
-#' Returns a positive or negtive response value for each drug.
+#' Returns a drug response report for each patient.
 #'
 #' This function predict drug response by using svm based recersive feature elimination.
 #'
@@ -228,6 +228,35 @@ DrugResponse.predict <- function(patient_inputfile,inputfile_formate,patient_nam
     cat("finished","\n")
 }
 
+#' calculate score
+#'
+#' Returns a positive or negtive response value for each drug.
+#'
+#' This function calculate drug response score by using svm model vector.
+#'
+#' @param test_index     patient index.
+#'
+#' @param drugwb_prob
+#'
+#' @param drug_prob
+#'
+#' @param test_geneExp       
+#'
+#' @param test_normalized          
+#'
+#' @param t_d       
+#'
+#' @param drug          
+#'
+#' @param test_geneExp_all       
+#'
+#' @param test_normalized          
+#'
+#' @param test_normalized_all       
+#' 
+#' @return a positive or negtive score for each drug
+#'
+#' @export
 DrugResponse.score <- function(test_index, drugwb_prob, drug_prob, test_geneExp, test_normalized, t_d, drug, test_geneExp_all, test_normalized_all){
 	    l=length(drugwb_prob)-2
     	drug_index=rep(0, l)
@@ -267,6 +296,20 @@ DrugResponse.score <- function(test_index, drugwb_prob, drug_prob, test_geneExp,
 		#return(test_for_drug)
 		return(-unlist(score))
 }
+
+#' read cel file
+#'
+#' Returns a vector of gene expression value for each patient.
+#'
+#' This function reads cel file.
+#'
+#' @param path.data
+#'
+#' @param patient_name
+#' 
+#' @return a vector of gene expression
+#'
+#' @export
 
 DrugResponse.readcel <- function(path.data, patient_name){
     #read in cell file
@@ -315,6 +358,16 @@ DrugResponse.readcel <- function(path.data, patient_name){
     write.table(zf, file= paste("Patient_",patient_name,"_tp.txt",sep=""), quote=F, sep="\t", row.names = FALSE)
     return(zf)
 }
+
+#' test package
+#'
+#' test if a package is installed.
+#'
+#' This function reads cel file.
+#'
+#' @param x
+#'
+#' @export
 
 DrugResponse.pkgTest <- function(x)
 {
