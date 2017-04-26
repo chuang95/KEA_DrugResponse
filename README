@@ -28,7 +28,7 @@ Arguments
 
 	sample_inputfile		gene expression data for patient.
 
-	inputfile_format		input file formate, can be cel (cel file) or exp (gene expression file)
+	inputfile_format		input file format, can be cel (cel file) or exp (gene expression file)
 
 	sample_name				sample name
 
