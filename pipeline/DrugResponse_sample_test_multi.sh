@@ -12,6 +12,7 @@ E_TEST_FAIL=74
 
 INPUT=$1
 DATAPATH='../KEADrugResponse/data'
+TDATAPATH=$(cd $(dirname "$DATAPATH") && pwd -P)/$(basename "$DATAPATH")
 
 if [ ! -e "$INPUT" ]; then
 echo "File \""$INPUT"\" does not exist."
@@ -33,12 +34,11 @@ do
 #IFS='.' read -a array <<< "$i"
 #echo $i
 cp $i mtemp
-if R -q -e "library(KEADrugResponse);library(affy);DrugResponse.predict('mtemp','cel','$i','$DATAPATH')"; then
+if R -q -e "library(KEADrugResponse);library(affy);DrugResponse.predict('mtemp','cel','$i','$TDATAPATH')"; then
 echo "test for $i successful"
 else
 echo "Fail to process cel files"
 rm -r mtemp
-rm GSM*
 rm *tar
 rm *_tp.txt
 exit $E_TEST_FAIL
@@ -49,7 +49,6 @@ done
 #paste -d',' *_tp.txt > $INPUT"_exp_N.csv"
 
 rm -r mtemp
-rm GSM*
 rm *tar
 rm *_tp.txt
 echo "done"
