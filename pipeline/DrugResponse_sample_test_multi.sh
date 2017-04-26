@@ -39,7 +39,6 @@ echo "test for $i successful"
 else
 echo "Fail to process cel files"
 rm -r mtemp
-rm *tar
 rm *_tp.txt
 exit $E_TEST_FAIL
 fi
@@ -49,7 +48,6 @@ done
 #paste -d',' *_tp.txt > $INPUT"_exp_N.csv"
 
 rm -r mtemp
-rm *tar
 rm *_tp.txt
 echo "done"
 exit 0
