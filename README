@@ -2,7 +2,9 @@ Drug response prediction
 
 	R package use for predicting drug response of cell lines/patients.
 
-	This R package analyzes cancer cell lines /patients gene expression file (Affymetrix U133 plus2.0), and predicts response to 7 FDA proved cancer drugs (Gemcitabine, Gefitinib, Cisplatin, Doxorubicin, Docetaxel, Paclitaxel, Carboplatin).
+	This R package analyzes cancer cell lines /patients gene expression file (Affymetrix U133 plus2.0), 
+	and predicts response to 7 FDA proved cancer drugs (Gemcitabine, Gefitinib, Cisplatin, Doxorubicin, 
+	Docetaxel, Paclitaxel, Carboplatin).
 
 
 
