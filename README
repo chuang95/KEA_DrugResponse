@@ -57,6 +57,7 @@ Pipeline
 	Each pipeline test uses the model file in KEA_DrugResponse/data (default $DATAPATH) folder. 
 	Change the $DATAPATH variable in pipeline script for different work path
 
+	cd into pipeline folder
 	# cd pipeline
 
 	run test for GSE sets
