@@ -32,7 +32,7 @@ Usage
 
 Arguments
 
-	sample_inputfile		gene expression data for patient.
+	input_directory			directory of gene expression data for patient.
 
 	inputfile_format		input file format, can be cel (cel file) or exp (gene expression file)
 
@@ -48,13 +48,14 @@ Arguments
 Example
 
 	input .cel file
-	DrugResponse.predict(patient_inputfile,'cel',patient name,'KEA_DrugResponse/data')
+	DrugResponse.predict(input_directory,'cel',patient name,'KEA_DrugResponse/data')
 
 
 Pipeline
 
 	we provide a bash script to run test for cancer samples in pipeline folder.
-	Each pipeline test uses the model file in KEA_DrugResponse/data (default $DATAPATH) folder. Change the $DATAPATH variable in pipeline script for different work path
+	Each pipeline test uses the model file in KEA_DrugResponse/data (default $DATAPATH) folder. 
+	Change the $DATAPATH variable in pipeline script for different work path
 
 	# cd pipeline
 
