@@ -28,7 +28,7 @@ Install instruction
 Usage
 
 	library(KEADrugResponse); library(affy);
-	DrugResponse.predict(patient_inputfile, inputfile_format, sample_name, path_to_model)
+	DrugResponse.predict(patient_inputfile, inputfile_format, sample_name, path_to_model, output_directory)
 
 Arguments
 
@@ -42,13 +42,13 @@ Arguments
  
 	return a matrix of positive or negative score for each drug
 
-	output pdf files of prediction score for each patient
+	outputs pdf files of prediction score for each patient in output_directory
 
 
 Example
 
 	input .cel file
-	DrugResponse.predict(input_directory,'cel',patient name,'KEA_DrugResponse/data')
+	DrugResponse.predict(input_directory,'cel',patient name,'KEA_DrugResponse/data',output_directory)
 
 
 Pipeline
