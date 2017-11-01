@@ -25,6 +25,11 @@ Install instruction
 	R CMD INSTALL --merge-multiarch KEADrugResponse_*.tar.gz
 	Unzip file
 
+Development
+
+  All packages should be installed automatically with packrat package manger
+	when running R in interactive mode.
+
 Usage
 
 	library(KEADrugResponse); library(affy);
