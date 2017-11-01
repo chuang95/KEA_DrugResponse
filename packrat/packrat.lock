@@ -1,0 +1,57 @@
+PackratFormat: 1.4
+PackratVersion: 0.4.8.1
+RVersion: 3.4.2
+Repos: BioCsoft=https://bioconductor.org/packages/3.6/bioc,
+    BioCann=https://bioconductor.org/packages/3.6/data/annotation,
+    BioCexp=https://bioconductor.org/packages/3.6/data/experiment,
+    CRAN=https://cloud.r-project.org
+
+Package: Biobase
+Source: Bioconductor
+Version: 2.38.0
+Hash: 0244109184b2af652cc74c424943a85b
+Requires: BiocGenerics
+
+Package: BiocGenerics
+Source: Bioconductor
+Version: 0.24.0
+Hash: b0e8545b3d329a929c98672b0957fbde
+
+Package: BiocInstaller
+Source: Bioconductor
+Version: 1.28.0
+Hash: d0ba96fdc386731c75313f5bb5ba3d68
+
+Package: KEADrugResponse
+Source: source
+Version: 0.1.2
+Hash: 13de0520aecbdd951501d485696b36b6
+SourcePath: ./KEADrugResponse
+
+Package: affy
+Source: Bioconductor
+Version: 1.56.0
+Hash: 9cf03eba689120198cd0bbaa5fdcb949
+Requires: Biobase, BiocGenerics, BiocInstaller, affyio, preprocessCore,
+    zlibbioc
+
+Package: affyio
+Source: Bioconductor
+Version: 1.48.0
+Hash: 766b0bf0f8f54b4c71a747d5d16f86f3
+Requires: zlibbioc
+
+Package: packrat
+Source: CRAN
+Version: 0.4.8-1
+Hash: 6ad605ba7b4b476d84be6632393f5765
+
+Package: preprocessCore
+Source: Bioconductor
+Version: 1.40.0
+Hash: 3546e1e86a1f750802823c2f73540517
+
+Package: zlibbioc
+Source: Bioconductor
+Version: 1.24.0
+Hash: e3dc79a6c62193cca9cafd986eed4e02
