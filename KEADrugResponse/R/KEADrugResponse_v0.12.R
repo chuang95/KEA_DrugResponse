@@ -27,16 +27,16 @@ NULL
 #'
 #' @export
 
-DrugResponse.predict <- function(patient_inputfile,inputfile_formate,patient_name,path.to.model='../data'){
+DrugResponse.predict <- function(patient_inputfile,inputfile_formate,patient_name,path.to.model='../data',path.output='.'){
 
-    if(!file.exists(patient_inputfile))
+    if(!file.exists(patient_inputfile) && !dir.exists(patient_inputfile))
     	stop("cannot load pateint data: ", patient_inputfile)
     	
     cat("read in test sample gene expression data","\n")
     
     if(inputfile_formate =="cel"){
     	
-    	test_geneExp=DrugResponse.readcel(patient_inputfile,patient_name)
+    	test_geneExp=DrugResponse.readcel(patient_inputfile,patient_name,path.output)
         p_index=which(test_geneExp[,3] %in% 1)
         test_geneExp_all=t(test_geneExp[,c(1,2)])
     	test_geneExp=t(test_geneExp[p_index,c(1,2)])
@@ -186,7 +186,7 @@ DrugResponse.predict <- function(patient_inputfile,inputfile_formate,patient_nam
 		cat("plot and save result","\n")
 		cellline_score=rbind(cellline_score,t_score[i,])
 		#print(toString(test_geneExp[i+1,1]))
-		pdf(paste("Patient_", patient_name[i], "_drug_response_prediction.pdf",sep=""))
+		pdf(file.path(path.output, paste("Patient_", patient_name[i], "_drug_response_prediction.pdf",sep="")))
 		xlimit=max(abs(cellline_score),na.rm = TRUE)
 		dotchart(t(cellline_score[(cell_line_number+patient_in_database)+i,]),xlim=c(0-xlimit, xlimit),cex=1.5)
 		points(t(cellline_score[1: cell_line_number,]), xc_drug,col="blue",cex=0.2)
@@ -213,7 +213,7 @@ DrugResponse.predict <- function(patient_inputfile,inputfile_formate,patient_nam
     d_score=data.frame(t_score)
     row.names(d_score)=patient_name
     colnames(d_score)=drug_name
-    write.table(d_score, file = paste("Patient_", patient_name[i],"_drug_response_prediction_cellline_distribution.csv",sep=""), quote=F, sep=",",col.names=NA)
+    write.table(d_score, file = file.path(path.output, paste("Patient_", patient_name[i],"_drug_response_prediction_cellline_distribution.csv",sep="")), quote=F, sep=",",col.names=NA)
     return(t_score)
     cat("finished","\n")
 }
@@ -301,9 +301,13 @@ DrugResponse.score <- function(test_index, drugwb_prob, drug_prob, test_geneExp,
 #'
 #' @export
 
-DrugResponse.readcel <- function(path.data, patient_name){
+DrugResponse.readcel <- function(path.data, patient_name, path.output){
     #read in cell file
-    affy.data = ReadAffy(celfile.path = path.data)
+    if (dir.exists(path.data)) {
+        affy.data = ReadAffy(celfile.path = path.data)
+    } else {
+        affy.data = ReadAffy(filenames = path.data)
+    }
     #mas5 normalize
     eset.mas5 = mas5(affy.data)
     exprSet.nologs = exprs(eset.mas5)
@@ -345,7 +349,7 @@ DrugResponse.readcel <- function(path.data, patient_name){
     } 
     zf=cbind(zf,ap_call)
     # Print the calls as a matrix
-    write.table(zf, file= paste("Patient_",patient_name,"_tp.txt",sep=""), quote=F, sep="\t", row.names = FALSE)
+    write.table(zf, file= file.path(path.output, paste("Patient_",patient_name,"_tp.txt",sep="")), quote=F, sep="\t", row.names = FALSE)
     return(zf)
 }
 

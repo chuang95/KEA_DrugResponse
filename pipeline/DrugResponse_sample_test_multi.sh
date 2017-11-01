@@ -11,43 +11,30 @@ E_UNZIP_FAIL=73
 E_TEST_FAIL=74
 
 INPUT=$1
-DATAPATH='../KEADrugResponse/data'
+PROJECTDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )/.." && pwd )"
+WORKDIR="$( cd "$INPUT" && pwd )"
+DATAPATH="$PROJECTDIR/KEADrugResponse/data"
 TDATAPATH=$(cd $(dirname "$DATAPATH") && pwd -P)/$(basename "$DATAPATH")
 
-if [ ! -e "$INPUT" ]; then
-echo "File \""$INPUT"\" does not exist."
-exit $E_FILE_NOT_EXIST
+if [ ! -e "$WORKDIR" ]; then
+	echo "File \""$WORKDIR"\" does not exist."
+	exit $E_FILE_NOT_EXIST
 fi
 
 echo "Data folder $INPUT checked"
 
-cd $INPUT
-
-#temp=$INPUT"*CEL"
-#echo $temp
-#CEL_FILES=(*CEL)
-
-mkdir mtemp
+cd $WORKDIR
 
 for i in *.[Cc][Ee][Ll]
 do
-#IFS='.' read -a array <<< "$i"
-#echo $i
-cp $i mtemp
-if R -q -e "library(KEADrugResponse);library(affy);DrugResponse.predict('mtemp','cel','$i','$TDATAPATH')"; then
-echo "test for $i successful"
-else
-echo "Fail to process cel files"
-rm -r mtemp
-rm *_tp.txt
-exit $E_TEST_FAIL
-fi
-mv mtemp/$i .
+	(
+		cd "$PROJECTDIR"
+		if R -q -e "library(KEADrugResponse);library(affy);DrugResponse.predict('$WORKDIR/$i','cel','$i','$TDATAPATH','$WORKDIR')"; then
+			echo "test for $i successful"
+		else
+			echo "Fail to process $i"
+		fi
+	)
 done
 
-#paste -d',' *_tp.txt > $INPUT"_exp_N.csv"
-
-rm -r mtemp
-rm *_tp.txt
 echo "done"
-exit 0

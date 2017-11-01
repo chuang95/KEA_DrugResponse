@@ -27,7 +27,7 @@ NULL
 #'
 #' @export
 
-DrugResponse.predict <- function(patient_inputfile,inputfile_formate,patient_name,path.to.model='../data'){
+DrugResponse.predict <- function(patient_inputfile,inputfile_formate,patient_name,path.to.model='../data',path.output="."){
 
     if(!file.exists(patient_inputfile))
     	stop("cannot load pateint data: ", patient_inputfile)
@@ -36,7 +36,7 @@ DrugResponse.predict <- function(patient_inputfile,inputfile_formate,patient_nam
     
     if(inputfile_formate =="cel"){
     	
-    	test_geneExp=DrugResponse.readcel(patient_inputfile,patient_name)
+    	test_geneExp=DrugResponse.readcel(patient_inputfile,patient_name,path.output)
         p_index=which(test_geneExp[,3] %in% 1)
         test_geneExp_all=t(test_geneExp[,c(1,2)])
     	test_geneExp=t(test_geneExp[p_index,c(1,2)])
@@ -121,7 +121,7 @@ DrugResponse.predict <- function(patient_inputfile,inputfile_formate,patient_nam
     test_normalized_out[p_index]=test_normalized
     test_normalized_out=t(test_normalized_out)
     colnames(test_normalized_out) = patient_name
-    write.table(test_normalized_out, file= paste("Patient_",patient_name,"_tp.txt",sep=""), quote=F, sep="\t", row.names = FALSE)
+    write.table(test_normalized_out, file= file.path(path.output,paste("Patient_",patient_name,"_tp.txt",sep="")), quote=F, sep="\t", row.names = FALSE)
 
     cat("finished","\n")
 }
