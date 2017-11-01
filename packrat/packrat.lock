@@ -6,6 +6,17 @@ Repos: BioCsoft=https://bioconductor.org/packages/3.6/bioc,
     BioCexp=https://bioconductor.org/packages/3.6/data/experiment,
     CRAN=https://cloud.r-project.org
 
+Package: AnnotationDbi
+Source: Bioconductor
+Version: 1.40.0
+Hash: 185bc9c8ccbed94957b7f4a622195278
+Requires: Biobase, BiocGenerics, DBI, IRanges, RSQLite, S4Vectors
+
+Package: BH
+Source: CRAN
+Version: 1.65.0-1
+Hash: 95f62be4d6916aae14a310a8b56a6475
+
 Package: Biobase
 Source: Bioconductor
 Version: 2.38.0
@@ -22,11 +33,39 @@ Source: Bioconductor
 Version: 1.28.0
 Hash: d0ba96fdc386731c75313f5bb5ba3d68
 
+Package: DBI
+Source: CRAN
+Version: 0.7
+Hash: 1ab72df487f06ad5f0de05446cdd4bd6
+
+Package: IRanges
+Source: Bioconductor
+Version: 2.12.0
+Hash: 20a52cdea49f9eb06ac17ebb163bc188
+Requires: BiocGenerics, S4Vectors
+
 Package: KEADrugResponse
 Source: source
 Version: 0.1.2
 Hash: 13de0520aecbdd951501d485696b36b6
 SourcePath: ./KEADrugResponse
+
+Package: RSQLite
+Source: CRAN
+Version: 2.0
+Hash: aa34cc0830f6223f6b1c419c31650000
+Requires: BH, DBI, Rcpp, bit64, blob, memoise, pkgconfig, plogr
+
+Package: Rcpp
+Source: CRAN
+Version: 0.12.13
+Hash: b9d8d89ff10ca2d8bfdaccdf83045ba1
+
+Package: S4Vectors
+Source: Bioconductor
+Version: 0.16.0
+Hash: 5b1afbd539d11cd088f381808566d3ee
+Requires: BiocGenerics
 
 Package: affy
 Source: Bioconductor
@@ -41,15 +80,70 @@ Version: 1.48.0
 Hash: 766b0bf0f8f54b4c71a747d5d16f86f3
 Requires: zlibbioc
 
+Package: bit
+Source: CRAN
+Version: 1.1-12
+Hash: a4cdb11cf9fd6dd38f9f40c413b81e93
+
+Package: bit64
+Source: CRAN
+Version: 0.9-7
+Hash: 4b195615d19ba49c114eb04e09e30a96
+Requires: bit
+
+Package: blob
+Source: CRAN
+Version: 1.1.0
+Hash: e29764e47f2faf0cd5b74cbcddc3fa9c
+Requires: tibble
+
+Package: digest
+Source: CRAN
+Version: 0.6.12
+Hash: e53fb8c58673df868183697e39a6a4d6
+
+Package: hgu133plus2cdf
+Source: Bioconductor
+Version: 2.18.0
+Hash: 1545b2af0acb4d038f3235f0bd38c30d
+Requires: AnnotationDbi
+
+Package: memoise
+Source: CRAN
+Version: 1.1.0
+Hash: 410fcd334bc626db100237cc1370f2e9
+Requires: digest
+
 Package: packrat
 Source: CRAN
 Version: 0.4.8-1
 Hash: 6ad605ba7b4b476d84be6632393f5765
 
+Package: pkgconfig
+Source: CRAN
+Version: 2.0.1
+Hash: 0dda4a2654a22b36a715c2b0b6fbacac
+
+Package: plogr
+Source: CRAN
+Version: 0.1-1
+Hash: fb19215402e2d9f1c7f803dcaa806fc2
+
 Package: preprocessCore
 Source: Bioconductor
 Version: 1.40.0
 Hash: 3546e1e86a1f750802823c2f73540517
+
+Package: rlang
+Source: CRAN
+Version: 0.1.2
+Hash: c17b638e3282aa222a47112d7a60bc66
+
+Package: tibble
+Source: CRAN
+Version: 1.3.4
+Hash: 3b72bdedb6c27fb216574ab9b15f2d43
+Requires: Rcpp, rlang
 
 Package: zlibbioc
 Source: Bioconductor
